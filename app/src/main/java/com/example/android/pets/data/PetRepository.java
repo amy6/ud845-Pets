@@ -46,9 +46,9 @@ public class PetRepository {
         });
     }
 
-    public void deletePets(List<Pet> pets) {
+    public void deletePets() {
         appExecutors.getDiskIO().execute(() -> {
-            petDao.deleteAllPets(pets);
+            petDao.deleteAllPets();
         });
     }
 }

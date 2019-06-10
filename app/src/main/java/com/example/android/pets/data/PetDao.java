@@ -28,6 +28,6 @@ public interface PetDao {
     void deletePet(Pet pet);
 
     @Delete
-    void deleteAllPets(List<Pet> pets);
+    void deleteAllPets();
 
 }

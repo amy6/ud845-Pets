@@ -29,7 +29,7 @@ public class PetListViewModel extends AndroidViewModel {
         petRepository.insertPet(dummyPet);
     }
 
-    public void deleteAllPets() {
-        petRepository.deletePets();
+    public void deleteAllPets( List<Pet> pets) {
+        petRepository.deletePets(pets);
     }
 }

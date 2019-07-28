@@ -27,8 +27,4 @@ public class PetDetailViewModel extends AndroidViewModel {
     public void insertPet(Pet pet) {
         petRepository.insertPet(pet);
     }
-
-    public void removePet(Pet pet) {
-        petRepository.deletePet(pet);
-    }
 }

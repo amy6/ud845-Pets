@@ -1,6 +1,7 @@
 package com.example.android.pets.data;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "pets")
@@ -15,6 +16,14 @@ public class Pet {
 
     public Pet(int id, String name, String breed, int gender, double weight) {
         this.id = id;
+        this.name = name;
+        this.breed = breed;
+        this.gender = gender;
+        this.weight = weight;
+    }
+
+    @Ignore
+    public Pet(String name, String breed, int gender, double weight) {
         this.name = name;
         this.breed = breed;
         this.gender = gender;

@@ -1,5 +1,6 @@
 package com.example.android.pets;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import java.util.List;
 
 public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
 
+    public static final String PET_ID = "pet_id";
     private List<Pet> pets;
 
     @NonNull @Override public PetViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -37,7 +39,7 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
         notifyDataSetChanged();
     }
 
-    static class PetViewHolder extends RecyclerView.ViewHolder {
+    class PetViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;
         private TextView summary;
@@ -46,6 +48,13 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             summary = itemView.findViewById(R.id.summary);
+
+            itemView.setOnClickListener(v -> {
+                Pet pet = pets.get(getAdapterPosition());
+                Intent intent = new Intent(itemView.getContext(), EditorActivity.class);
+                intent.putExtra(PET_ID, pet.getId());
+                itemView.getContext().startActivity(intent);
+            });
         }
     }
 }

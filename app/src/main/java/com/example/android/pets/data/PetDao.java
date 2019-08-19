@@ -24,8 +24,8 @@ public interface PetDao {
     @Update()
     void updatePet(Pet pet);
 
-    @Delete
-    void deletePet(Pet pet);
+    @Query("DELETE FROM pets WHERE id = :id")
+    void deletePet(int id);
 
     @Query("DELETE FROM pets")
     void deleteAllPets();

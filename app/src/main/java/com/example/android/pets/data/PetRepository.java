@@ -40,9 +40,9 @@ public class PetRepository {
         });
     }
 
-    public void deletePet(Pet pet) {
+    public void deletePet(int petId) {
         appExecutors.getDiskIO().execute(() -> {
-            petDao.deletePet(pet);
+            petDao.deletePet(petId);
         });
     }
 

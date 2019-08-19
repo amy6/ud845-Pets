@@ -23,8 +23,8 @@ public class PetDetailViewModel extends AndroidViewModel {
         return petRepository.getPet(id);
     }
 
-    public void deletePet(Pet pet) {
-        petRepository.deletePet(pet);
+    public void deletePet(int petId) {
+        petRepository.deletePet(petId);
     }
 
     public void updatePet(Pet pet) {

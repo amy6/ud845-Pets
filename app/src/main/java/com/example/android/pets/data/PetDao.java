@@ -19,7 +19,7 @@ public interface PetDao {
     LiveData<List<Pet>> getPets();
 
     @Query("SELECT * FROM pets WHERE id = :id")
-    Pet getPet(int id);
+    LiveData<Pet> getPet(int id);
 
     @Update()
     void updatePet(Pet pet);

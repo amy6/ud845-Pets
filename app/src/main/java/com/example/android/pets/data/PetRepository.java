@@ -24,7 +24,7 @@ public class PetRepository {
         return pets;
     }
 
-    public Pet getPet(int id) {
+    public LiveData<Pet> getPet(int id) {
         return petDao.getPet(id);
     }
 
